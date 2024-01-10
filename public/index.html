@@ -6,14 +6,47 @@
     <title>Document</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script defer src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <form id="form">
-        <input type="text" id="userId" placeholder="User ID">
-        <input type="text" id="message" placeholder="Message">
-        <input type="submit">Generate Signature</input>
-        <button type="button" onclick="verifySignature()">Verify Signature</button>
-       </form>
-       
+    
+    <input type="text" id="userId" placeholder="User ID">
+    <button onclick="getKeyPair()">Get Key Pair</button>
+    <input type="text" placeholder="Signature" id="getSign">
+    <button type="button" onclick="verifySignature()">Verify Signature</button>
+    
+
+    <div class="key-pair">
+
+        <div class="key">
+            <h3>Private Key</h3>
+            <p id="privatekey"></p>
+        </div>
+        
+        <div class="key">
+            <h3>Public Key</h3>
+            <p id="publickey" ></p>
+        </div>
+        
+    </div>
+    <input type="text" id="message" placeholder="Message">
+    <div class="key-pair">
+
+        <div class="key">
+            <h3>Hash</h3>
+            <button onclick="getHash()">get hash</button>
+            <p id="hash"></p>
+        </div>
+        
+        <div class="key">
+            <h3>Signature</h3>
+            <button onclick="getSign()">get signature</button>
+            <p id="sign"></p>
+        </div>
+        
+    </div>
+    
+    
+    
 </body>
 </html>
